@@ -102,7 +102,7 @@ This project implements a background process designed to continuously fetch the 
 
 <br>
 
-[Watch Demo Here](https://github.com/deveshruttala/async-yt-backend/raw/refs/heads/main/assets/demo_video.mp4)
+### * [Watch Demo Here](https://github.com/deveshruttala/async-yt-backend/raw/refs/heads/main/assets/demo_video.mp4)
 
 <br>
 
