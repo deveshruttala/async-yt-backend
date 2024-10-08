@@ -58,7 +58,7 @@ This project implements a background process designed to continuously fetch the 
 
 <br> <p  align = "center" >  <img src="assets/1.png" width="600" height = "250" align = "center" /> </p>
 <br>
-
+<br>
 <img src="assets/api_design.png" width="250" height = "250"  /> <img src="assets/2.png" width="250" height = "250"  /> <img src="assets/3.png" width="250" height = "250" />
 
 <br>
@@ -96,10 +96,11 @@ This project implements a background process designed to continuously fetch the 
 
 * Faster setup use Docker File that is attached along with the code:
 
-- Move to the root directoy and run the below commands:
+- Move to the root directoy and run the below commands:  ``` docker build ``` and then use ``` docker up```
 
-``` docker build ```
-``` docker up```
+<br>
+
+[Watch Demo Here](https://github.com/deveshruttala/async-yt-backend/raw/refs/heads/main/assets/demo_video.mp4)
 
 <br>
 
