@@ -1,0 +1,122 @@
+
+
+
+body {
+    text-align: center;
+    background-color: #121212; /* Dark background color */
+    background-image: linear-gradient(90deg, #121212 0%, #1E1E1E 100%); /* Dark gradient */
+    color: white; /* Set text color to white */
+}
+
+.card {
+    margin: 30px;
+    border: 2px solid white; /* Add a white border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #1E1E1E; /* Dark background for cards */
+    padding: 20px; /* Padding for content */
+}
+
+.card img {
+    border-radius: 8px 8px 0 0; /* Rounded corners for card images */
+}
+
+.btn {
+    border-radius: 25px; /* More pronounced rounded corners for all buttons */
+    padding: 10px 20px; /* Padding for better spacing */
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Purple gradient background */
+    border: none; /* Remove default border */
+    color: white; /* Text color */
+    transition: background-color 0.3s, color 0.3s; /* Transition for hover effect */
+}
+
+.btn:hover {
+    background: linear-gradient(90deg, #2575fc, #6a11cb); /* Reverse gradient on hover */
+}
+
+.btn-outline-warning {
+    color: white; /* Keep text color white */
+}
+
+select {
+    border: 2px solid white; /* White border for dropdown */
+    border-radius: 25px; /* Rounded corners for dropdown */
+    padding: 10px; /* Padding inside dropdown */
+    background-color: #1E1E1E; /* Dark background for dropdown */
+    color: white; /* White text for dropdown */
+}
+
+label {
+    font-weight: bold; /* Bold text for labels */
+}
+
+.container-fluid {
+    max-width: 1200px; /* Limit the container width for better alignment */
+    margin: auto; /* Center the container */
+}
+
+.row {
+    margin: 0; /* Reset margin for rows */
+}
+
+h1, h2, h3 {
+    margin: 20px 0; /* Margin for headers */
+}
+
+h1 {
+    font-size: 2.5rem; /* Larger font size for main title */
+}
+
+h2 {
+    font-size: 2rem; /* Medium font size for sub-title */
+}
+
+h3 {
+    font-size: 1.5rem; /* Smaller font size for bonus points header */
+}
+
+.btn-outline-warning:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Add slight hover effect */
+}
+
+
+.search-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Adjust this margin to your preference */
+  }
+  
+  .search-form-container input[type="text"] {
+    padding: 10px 20px;  /* Adjust padding for more space inside the input */
+    border-radius: 25px; /* Fully rounded input */
+    border: 2px solid #007bff; /* Border color matching the button */
+    outline: none; /* Remove default input outline */
+    font-size: 16px; /* Font size */
+    width: 300px; /* Adjust width to fit your needs */
+    transition: 0.3s ease; /* Smooth transition effect */
+  }
+  
+  /* Input hover and focus effects */
+  .search-form-container input[type="text"]:focus {
+    border-color: #0056b3; /* Darker blue on focus */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Subtle blue shadow on focus */
+  }
+  
+  /* Button styling */
+  .search-form-container button {
+    padding: 10px 20px; /* Padding to increase the button size */
+    border-radius: 25px; /* Fully rounded button */
+    background-color: #007bff; /* Primary button color */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    font-size: 16px; /* Font size */
+    margin-left: 10px; /* Space between input and button */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: 0.3s ease; /* Smooth transition effect */
+  }
+  
+  /* Button hover effect */
+  .search-form-container button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  

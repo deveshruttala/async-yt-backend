@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>YouTube Data API</title>
+</head>
+
+<body>
+    <br>
+    <h1>FamPay Project</h1>
+    <div>
+      <span style="font-size:18px;"> Welcome to YT API , A seamless app to fetch YouTube video recrods asynchronously by Devesh </span>
+    </div>
+    
+    <h2>Search YouTube Video</h2>
+    <br>
+
+
+    <br>
+    <div class="search-form-container">
+      <form action="/search/" method="get">
+        <input type="text" name="query" placeholder="Enter search query" value="{{ query }}" required>
+        <button type="submit" class="btn btn-outline-primary">Search</button>
+      </form>
+    </div>
+
+      <br>
+      <br>
+
+      <!-- <div>Sorting</div> -->
+      {% if nextPage %}
+      <form action="/filter/" method="post">
+        {% csrf_token %}
+        <label for="video_duration">Choose Video Duration:</label>
+        <select id="duration" name="duration">
+          <option value="Any">Any</option>
+          <option value="Long">Long</option>
+          <option value="Medium">Medium</option>
+          <option value="Short">Short</option>
+        </select>
+        <input type="submit" class="btn btn-outline-warning" style="color:black;" value="Filter">
+      </form>
+      {% endif %}
+
+      <br>
+
+      <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+          {% for item in json %}
+            <div class="col">
+              <div class="card">
+                <img src="{{item.snippet.thumbnails.high.url}}" height="300px" class="card-img-top">
+                <div class="card-body">
+                  <h4 class="card-title">Channel Title - {{item.snippet.channelTitle}}</h4>
+                  <h5 class="card-title">Video Title - {{item.snippet.title}}</h5>
+                  <p class="card-text">{{item.snippet.description}}</p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted">Published At: {{item.snippet.publishedAt|date:'d-m-Y, H:i:s'}}</small>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+      </div>
+
+{% if prevPage %}
+<form action="/search/{{prevPage}}/" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="prev" value="{{prevPage}}">
+  <input type="hidden" name="duration" value="{{filter_duration}}">
+  <button id='prev-btn' type="submit" class="btn btn-outline-primary">Previous Page</button>
+</form>
+{% endif %}
+<br>
+
+{% if nextPage %}
+<form action="/search/{{nextPage}}/" method="post">
+  {% csrf_token %}
+  <input type="hidden" name="next" value="{{nextPage}}">
+  <input type="hidden" name="duration" value="{{filter_duration}}">
+  <button id='next-btn' type="submit" class="btn btn-outline-primary">Next Page</button>
+</form>
+{% endif %}
+<br>
+
+<script>
+    function callfunction () {
+        console.log('periodic call');
+        window.location.href = '/search/';
+    }
+    window.onload = function () {
+    // callfunction();
+    setInterval(function () {
+        callfunction();}, 60000);
+    }
+</script>
+
+</body>
+</html>
